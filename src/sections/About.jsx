@@ -1,5 +1,6 @@
 import React from 'react';
 import { User, Layout, Server, Code, Database, Wrench } from 'lucide-react';
+import { techSkills, categoryColors } from '../utils/data';
 
 const About = () => {
   // Category icons mapping
@@ -9,47 +10,6 @@ const About = () => {
     "Programming Languages": <Code size={20} />,
     "Database": <Database size={20} />,
     "Other Tools": <Wrench size={20} />
-  };
-
-  // Category colors mapping
-  const categoryColors = {
-    "Frontend Technologies": "#61DAFB", // React blue
-    "Backend Technologies": "#68A063", // Node.js green
-    "Programming Languages": "#F7DF1E", // JavaScript yellow
-    "Database": "#4DB33D", // MongoDB green
-    "Other Tools": "#E535AB" // GraphQL pink
-  };
-
-  const techSkills = {
-    "Frontend Technologies": [
-      { name: "HTML5", borderColor: "#E34F26" },
-      { name: "CSS3", borderColor: "#1572B6" },
-      { name: "React", borderColor: "#61DAFB" },
-      { name: "Angular", borderColor: "#DD0031" },
-      { name: "Vite", borderColor: "#646CFF" },
-      { name: "Gatsby", borderColor: "#663399" },
-      { name: "Next.js", borderColor: "#0070f3" },
-      { name: "Bootstrap", borderColor: "#7952B3" },
-      { name: "MaterialUI", borderColor: "#0081CB" },
-      { name: "Tailwind", borderColor: "#06B6D4" },
-      { name: "Sass", borderColor: "#CC6699" },
-      { name: "GraphQL", borderColor: "#E535AB" }
-    ],
-    "Backend Technologies": [
-      { name: "Node.js", borderColor: "#68A063" },
-      { name: ".NET", borderColor: "#512BD4" }
-    ],
-    "Programming Languages": [
-      { name: "JavaScript", borderColor: "#F7DF1E" },
-      { name: "TypeScript", borderColor: "#3178C6" },
-      { name: "Java", borderColor: "#007396" },
-      { name: "Python", borderColor: "#3776AB" }
-    ],
-    "Database": [
-      { name: "MongoDB", borderColor: "#4DB33D" },
-      { name: "MySQL", borderColor: "#4479A1" },
-      { name: "MSSQL", borderColor: "#CC2927" }
-    ],
   };
 
   return (
