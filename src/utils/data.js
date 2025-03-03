@@ -1,4 +1,4 @@
-
+import { assets } from "../assets/assets";
 // Category colors mapping
 export const categoryColors = {
   "Frontend Technologies": "#61DAFB", // React blue
@@ -108,29 +108,35 @@ export const certifications = [
   export const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce platform with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment processing.",
+      title: "ZELVIRA",
+      description: "An e-commerce platform built using the MERN stack. Implemented features for users to browse, filter, and sort products, select variants like size, and add items to their cart. Developed a seamless checkout process, allowing users to provide delivery details and choose between Cash on Delivery or online payment options.",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
-      liveUrl: "https://ecommerce-platform.example.com",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      githubUrl: "https://github.com/harshanabatagalla/ZELVIRA",
+      image: assets.zelvira
     },
     {
       id: 2,
-      title: "Weather Dashboard",
-      description: "A weather dashboard that displays current weather conditions and forecasts for multiple locations. Uses OpenWeatherMap API for data.",
-      technologies: ["React", "JavaScript", "Tailwind CSS", "OpenWeatherMap API"],
-      githubUrl: "https://github.com/yourusername/weather-dashboard",
-      liveUrl: "https://weather-dashboard.example.com",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "Umbrella Go",
+      description: "A front-end weather application that fetches weather data from the OpenWeatherMap API and displays it to the user. Users can search for weather data by city name and view the current weather, temperature, wind speed and humidity levels, as well as the weather forecast for the next 16 days",
+      technologies: ["React", "Material UI", "OpenWeatherMap API"],
+      githubUrl: "https://github.com/harshanabatagalla/umbrellaGo",
+      liveUrl: "https://umbrellago.netlify.app/",
+      image: assets.umbrellaGo
     },
     {
       id: 3,
-      title: "Task Management App",
-      description: "A task management application with features like task creation, assignment, due dates, and status tracking.",
-      technologies: ["React", "Redux", "Firebase", "Material UI"],
-      githubUrl: "https://github.com/yourusername/task-management",
-      liveUrl: "https://task-management.example.com",
-      image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+      title: "Journey Jive",
+      description: "This project aims to develop a travel planning system that optimizes multi-destination trips by minimizing travel distances. It includes features such as real-time weather updates, future forecasts, and a trip-scoring system based on user reviews. Suggests nearby places of interest, enhancing the overall travel experience.",
+      technologies: ["React", "NodeJs", "MySQL", "Express", "Material UI"],
+      githubUrl: "https://github.com/harshanabatagalla/journey-jive",
+      image: assets.journeyJive
+    },
+    {
+      id: 4,
+      title: "My Portfolio",
+      description: "A personal portfolio website that showcases my work, skills, and experiences. The website is built using React, Tailwind CSS, and Vite, with EmailJS integrated for the contact form. It is designed to be fully responsive, optimized for all devices, and SEO-friendly. The website's design is inspired by the VS Code theme, giving it a sleek and modern developer-friendly aesthetic",
+      technologies: ["React", "NodeJs", "MySQL", "Express", "Material UI"],
+      githubUrl: "https://github.com/harshanabatagalla/portfolio",
+      image: assets.portfolio
     }
   ];
