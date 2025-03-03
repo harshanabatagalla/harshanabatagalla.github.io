@@ -53,3 +53,55 @@ export const workExperiences = [
     ]
   }
 ];
+
+export const educationData = [
+  {
+    id: 1,
+    institution: "University of Moratuwa",
+    degree: "BSc.(Hons.) in Information Technology",
+    duration: "June 2021 - present",
+    description: "Currently pursuing a BSc. (Hons.) in Information Technology, actively engaging in coursework and practical projects to enhance skills for impactful contributions in the dynamic tech industry."
+  },
+  {
+    id: 2,
+    institution: "St. Thomas' College, Matale",
+    degree: "G.C.E. A/L (Physical Science Stream)",
+    duration: "2017-2019",
+    description: "Completed Advanced Levels with a Z score of 1.6323. Studied Physics, Combined Mathematics , and Information and Communication Technology as main subjects."
+  },
+  {
+    id: 3,
+    institution: "St. Thomas' College, Matale",
+    degree: "G.C.E. O/L",
+    duration: "2011 - 2016",
+    description: "Completed with a score of 9 A-grades. My optional subjects were ICT, Goegraphy and Music."
+  }
+];
+
+export const certifications = [
+    {
+      "title": "CCNA: Introduction to Networks",
+      "organization": "Cisco",
+      "year": 2023,
+      "link": "https://www.netacad.com/courses/intro-switching-routing-wireless-essentials"
+    },
+    {
+      "title": "Web Design for Beginners",
+      "organization": "University of Moratuwa",
+      "year": 2023,
+      "link": "https://www.mrt.ac.lk/web-design-course"
+    },
+    {
+      "title": "SYSOUT 1.0",
+      "organization": "IEEE Student Branch of SLIIT",
+      "year": 2021,
+      "link": "https://ieee.sliit.lk/sysout-1.0"
+    },
+    {
+      "title": "CYBERHAT 1.0",
+      "organization": "IEEE Computer Society of SLTC",
+      "year": 2021,
+      "link": "https://ieeecs.sltc.ac.lk/cyberhat-1.0"
+    }
+  ];
+  
