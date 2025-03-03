@@ -30,7 +30,7 @@ const Education = () => {
                 <h3 className="text-xl font-semibold text-white mb-4">Certifications</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {certifications.map((certification) => (
-                        <div key={certification.id} className="bg-[#252526] p-4 rounded-lg border border-[#333333]">
+                        <div key={certification.id} className="bg-[#252526] p-4 rounded-lg border border-[#333333] cursor-pointer hover:bg-[#333333] transition-colors duration-300" onClick={() => window.open(certification.link, '_blank')}>
                             <h4 className="text-lg font-medium text-white">{certification.title}</h4>
                             <p className="text-gray-400">{certification.organization} • {certification.year}</p>
                         </div>

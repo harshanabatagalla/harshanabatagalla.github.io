@@ -83,25 +83,54 @@ export const certifications = [
       "title": "CCNA: Introduction to Networks",
       "organization": "Cisco",
       "year": 2023,
-      "link": "https://www.netacad.com/courses/intro-switching-routing-wireless-essentials"
+      "link": "https://www.credly.com/badges/bd03e517-e4d3-40a6-a8b6-d4f8705d4625"
     },
     {
       "title": "Web Design for Beginners",
       "organization": "University of Moratuwa",
       "year": 2023,
-      "link": "https://www.mrt.ac.lk/web-design-course"
+      "link": "https://drive.google.com/file/d/1TToo-9xdpOywF_G3zPCa0EHwHkRT0xuE/view?usp=sharing"
     },
     {
       "title": "SYSOUT 1.0",
       "organization": "IEEE Student Branch of SLIIT",
       "year": 2021,
-      "link": "https://ieee.sliit.lk/sysout-1.0"
+      "link": "https://drive.google.com/file/d/1IMCHEsdobg20pTQQPk7TIWWBjbKxZi1-/view?usp=sharing"
     },
     {
       "title": "CYBERHAT 1.0",
       "organization": "IEEE Computer Society of SLTC",
       "year": 2021,
-      "link": "https://ieeecs.sltc.ac.lk/cyberhat-1.0"
+      "link": "https://drive.google.com/file/d/1OvXY8yxzNC7kGKV2MAGV6LpRUnSvXUy0/view?usp=drivesdk"
     }
   ];
   
+  export const projects = [
+    {
+      id: 1,
+      title: "E-commerce Platform",
+      description: "A full-stack e-commerce platform with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment processing.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
+      githubUrl: "https://github.com/yourusername/ecommerce-platform",
+      liveUrl: "https://ecommerce-platform.example.com",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      id: 2,
+      title: "Weather Dashboard",
+      description: "A weather dashboard that displays current weather conditions and forecasts for multiple locations. Uses OpenWeatherMap API for data.",
+      technologies: ["React", "JavaScript", "Tailwind CSS", "OpenWeatherMap API"],
+      githubUrl: "https://github.com/yourusername/weather-dashboard",
+      liveUrl: "https://weather-dashboard.example.com",
+      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    },
+    {
+      id: 3,
+      title: "Task Management App",
+      description: "A task management application with features like task creation, assignment, due dates, and status tracking.",
+      technologies: ["React", "Redux", "Firebase", "Material UI"],
+      githubUrl: "https://github.com/yourusername/task-management",
+      liveUrl: "https://task-management.example.com",
+      image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    }
+  ];
