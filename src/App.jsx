@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TabBar from './components/Tabbar';
+import TabBar from './components/TaBbar';
 import ActivityBar from './components/ActivityBar';
 import StatusBar from './components/StatusBar';
 import Hero from './sections/Hero';
