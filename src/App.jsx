@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import TabBar from './components/Tabbar';
+import ActivityBar from './components/ActivityBar';
+import StatusBar from './components/StatusBar';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Work from './sections/Work';
+import Education from './sections/Education';
+import Projects from './sections/Projects';
+import Testimonials from './sections/Testimonials';
+import Contact from './sections/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState('hero');
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'about':
+        return <About />;
+      case 'work':
+        return <Work />;
+      case 'education':
+        return <Education />;
+      case 'projects':
+        return <Projects />;
+      case 'testimonials':
+        return <Testimonials />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Hero setActiveSection={setActiveSection} />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="h-full flex flex-col bg-[#1E1E1E] text-white">
+      <div className="flex-1 flex overflow-hidden">
+        <ActivityBar activeSection={activeSection} setActiveSection={setActiveSection} />
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <TabBar activeSection={activeSection} setActiveSection={setActiveSection} />
+          <div className="flex-1 overflow-hidden">
+            {renderSection()}
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <StatusBar />
+    </div>
+  );
 }
 
-export default App
+export default App;
