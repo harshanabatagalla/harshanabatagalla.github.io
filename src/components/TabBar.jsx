@@ -41,7 +41,7 @@ const TabBar = ({ activeSection, setActiveSection }) => {
   };
 
   return (
-    <div className="flex bg-[#252526] border-b border-[#1E1E1E] overflow-x-auto">
+    <div className="flex bg-[#252526] border-b border-[#1E1E1E] overflow-x-auto font-[JetBrains_Mono]">
       <div 
         className={`flex items-center px-4 py-2 border-r border-[#1E1E1E] cursor-pointer ${
           activeSection === 'hero' ? 'bg-[#1E1E1E]' : 'bg-[#2D2D2D]'

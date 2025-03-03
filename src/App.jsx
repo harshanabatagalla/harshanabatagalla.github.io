@@ -27,7 +27,7 @@ function App() {
       case 'contact':
         return <Contact />;
       default:
-        return <Hero />;
+        return <Hero setActiveSection={setActiveSection} />;
     }
   };
 
