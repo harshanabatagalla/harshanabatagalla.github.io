@@ -29,6 +29,13 @@ const Work = () => {
           </div>
         ))}
       </div>
+      
+      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#333333]">
+        <p className="text-gray-400">
+          <span className="text-green-400">// </span>
+          Want to know more about my work experience? Feel free to contact me for a detailed resume.
+        </p>
+      </div>
     </div>
   );
 };
