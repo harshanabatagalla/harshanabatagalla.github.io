@@ -140,3 +140,38 @@ export const certifications = [
       image: assets.portfolio
     }
   ];
+
+  export const testimonials = [
+    {
+      id: 1,
+      name: "Pasindu Gunathilake",
+      position: "Associate Technical Lead",
+      company: "99x",
+      text: "During Harshana's internship at 99x, I had the opportunity to observe his work in website development. Even in a short time, Harshana demonstrated an impressive ability to quickly adapt to new projects and technologies.</br></br>What stood out most about Harshana was his exceptional adaptability and eagerness to learn. He effectively managed website content development tasks, showing a keen eye for detail and a good grasp of user experience principles.</br></br>Colleagues often remarked on Harshana's friendly demeanor and supportive attitude, which contributed positively to the team dynamic. His ability to quickly understand and contribute to projects was remarkable.</br></br>Any team would benefit from Harshana's blend of technical aptitude, quick learning ability, and excellent interpersonal skills. I wholeheartedly recommend him for any role in web development or content management. He has a bright future ahead in the tech industry, and I look forward to seeing his continued growth and success.",
+      avatar: assets.pasinduG
+    },
+    {
+      id: 2,
+      name: "Prasad Srimal",
+      position: "Technical Lead ",
+      company: "Tech Venturas",
+      text: "Harshana's dedication and passion for technology were evident from the moment he embarked on his journey in the IT field. <br/><br/>During his tenure at the university, Harshana undertook a project that truly showcased his skills and innovative thinking. He spearheaded the development of a cutting-edge travel planning system, which not only optimized multi-destination trips by minimizing travel distances but also incorporated real-time weather updates and future forecasts. His commitment to delivering excellence was apparent in every aspect of the project, from its conceptualization to its execution.<br/><br/>One of Harshana's key contributions to the project was his role in implementing the weather forecast feature. His meticulous attention to detail ensured that users received accurate and timely updates, thereby enhancing their overall travel experience. Additionally, Harshana played a pivotal role in suggesting tourist attractions based on user preferences, further enriching the functionality of the system.&nbsp;<u><a href='https://www.linkedin.com/in/harshana-batagalla-160a39250/details/recommendations/' target='_blank'>See more...</a></u>",
+      avatar: assets.prasad
+    },
+    {
+      id: 3,
+      name: "Chrishan de Mel",
+      position: "Chief Marketing and Corporate Affairs Officer",
+      company: "99x",
+      text: "Harshana provided excellent support on enhancements for the 99x.io website. He was proactive in understanding the requirement, sought clarifications and communicated progress. He was focused on getting the job done and in terms of quality, getting it right first time. I appreciate Harshana's contribution and wish him every success in the next steps of his career. All the very best!",
+      avatar: assets.chrishanD
+    },
+    {
+      id: 4,
+      name: "Shehan Cooray",
+      position: "Senior Digital Marketing Executive",
+      company: "99x",
+      text: "Harshana contributed to the 99x corporate website technical activities during his internship, and as a person who had to work alongside with him and overlook a few of the tasks that were handed to him, He did a splendid job at abiding to his deadlines and overall communication on the status of said tasks. Harshana is a self studying individual and I'm pleased to have had him on our team.",
+      avatar: assets.shehan
+    }
+  ];
