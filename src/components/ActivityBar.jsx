@@ -89,7 +89,7 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
                             setExpanded(false);
                         }
                     }}
-                    className={`flex items-center p-2 mb-2 mx-2 rounded hover:text-white ${activeSection === section.id ? 'text-white bg-[#252526]' : ''
+                    className={`flex items-center p-2 px-4 mb-2 hover:text-white ${activeSection === section.id ? 'text-white bg-[#252526] border-l-3 border-[#007ACC]' : ''
                         }`}
                     title={section.label}
                 >
