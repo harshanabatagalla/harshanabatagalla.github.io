@@ -9,7 +9,7 @@ const Hero = ({ setActiveSection }) => {
                 <div className="max-w-2xl">
                     <div className="flex items-center mb-4">
                         <Terminal size={32} className="text-green-400 mr-4" />
-                        <h1 className="md:text-4xl text-3xl font-bold text-white">Hello, World!</h1>
+                        <h1 className="md:text-4xl text-2xl font-bold text-white">Hello, World!</h1>
                     </div>
                     <h2 className="md:text-2xl text-xl font-semibold text-gray-300 mb-4">I'm <span className="text-[#007ACC]">Harshana Batagalla</span></h2>
                     <p className="text-xl text-gray-400 mb-6 font-light">
