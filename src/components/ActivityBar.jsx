@@ -107,13 +107,13 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
             <div>
                 <button
                     onClick={() => {
+                        window.open('https://github.com/harshanabatagalla', '_blank');
                         // Auto-close menu after selection on mobile when expanded
                         if (isMobile && expanded) {
                             setExpanded(false);
                         }
                     }}
-                    className={`flex items-center p-2 mb-2 mx-2 rounded hover:text-white'
-                        }`}
+                    className='flex items-center p-2 mb-2 mx-2 rounded hover:text-white cursor-pointer'
                     title="Github"
                 >
                     <div className="min-w-6">
@@ -125,13 +125,13 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
                 </button>
                 <button
                     onClick={() => {
+                        window.open('https://www.linkedin.com/in/harshana-batagalla/', '_blank')
                         // Auto-close menu after selection on mobile when expanded
                         if (isMobile && expanded) {
                             setExpanded(false);
                         }
                     }}
-                    className={`flex items-center p-2 mb-2 mx-2 rounded hover:text-white'
-                        }`}
+                    className='flex items-center p-2 mb-2 mx-2 rounded hover:text-white cursor-pointer'
                     title="LinkedIn"
                 >
                     <div className="min-w-6">
