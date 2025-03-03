@@ -7,7 +7,7 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   return (
-    <div id="projects-section" className="h-full p-6 overflow-auto">
+    <div id="projects-section" className="h-full p-6 overflow-auto font-[JetBrains_Mono]">
       <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
         <FolderKanban size={24} className="text-[#007ACC] mr-2" />
         Projects
