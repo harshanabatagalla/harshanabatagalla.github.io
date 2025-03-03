@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TabBar from './components/Tabbar';
 import ActivityBar from './components/ActivityBar';
+import StatusBar from './components/StatusBar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Work from './sections/Work';
@@ -42,6 +43,7 @@ function App() {
           </div>
         </div>
       </div>
+      <StatusBar />
     </div>
   );
 }
