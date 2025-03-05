@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
     Home,
     User,
@@ -13,9 +14,10 @@ import {
     PanelRightOpen
 } from 'lucide-react';
 
-const ActivityBar = ({ activeSection, setActiveSection }) => {
+const ActivityBar = () => {
     const [expanded, setExpanded] = useState(true);
     const [isMobile, setIsMobile] = useState(false);
+    const location = useLocation();
 
     // Set initial expanded state and detect mobile
     useEffect(() => {
@@ -45,13 +47,13 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
     };
 
     const sections = [
-        { id: 'hero', icon: <Home size={24} />, label: 'Home' },
-        { id: 'about', icon: <User size={24} />, label: 'About' },
-        { id: 'work', icon: <Briefcase size={24} />, label: 'Work' },
-        { id: 'education', icon: <GraduationCap size={24} />, label: 'Education' },
-        { id: 'projects', icon: <FolderKanban size={24} />, label: 'Projects' },
-        { id: 'testimonials', icon: <MessageSquareQuote size={24} />, label: 'Testimonials' },
-        { id: 'contact', icon: <Mail size={24} />, label: 'Contact' },
+        { path: '/', icon: <Home size={24} />, label: 'Home' },
+        { path: '/about', icon: <User size={24} />, label: 'About' },
+        { path: '/work', icon: <Briefcase size={24} />, label: 'Work' },
+        { path: '/education', icon: <GraduationCap size={24} />, label: 'Education' },
+        { path: '/projects', icon: <FolderKanban size={24} />, label: 'Projects' },
+        { path: '/testimonials', icon: <MessageSquareQuote size={24} />, label: 'Testimonials' },
+        { path: '/contact', icon: <Mail size={24} />, label: 'Contact' },
     ];
 
     // Container classes based on mobile/desktop and expanded/collapsed state
@@ -68,7 +70,6 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
     return (
         <div className={containerClasses}>
             <div className="flex justify-between items-center px-4 mb-4">
-
                 <button
                     className="pb-2 hover:text-white"
                     onClick={toggleExpanded}
@@ -76,22 +77,21 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
                 >
                     {expanded ? <PanelRightOpen size={24} /> : <PanelRightClose size={24} />}
                 </button>
-
             </div>
 
             {sections.map((section) => (
-                <button
-                    key={section.id}
+                <Link
+                    key={section.path}
+                    to={section.path}
+                    className={`flex items-center p-2 px-4 mb-2 hover:text-white ${location.pathname === section.path ? 'text-white bg-[#252526] border-l-3 border-[#007ACC]' : ''
+                        }`}
+                    title={section.label}
                     onClick={() => {
-                        setActiveSection(section.id);
                         // Auto-close menu after selection on mobile when expanded
                         if (isMobile && expanded) {
                             setExpanded(false);
                         }
                     }}
-                    className={`flex items-center p-2 px-4 mb-2 hover:text-white ${activeSection === section.id ? 'text-white bg-[#252526] border-l-3 border-[#007ACC]' : ''
-                        }`}
-                    title={section.label}
                 >
                     <div className="min-w-6">
                         {section.icon}
@@ -99,22 +99,24 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
                     {expanded && (
                         <span className="ml-2">{section.label}</span>
                     )}
-                </button>
+                </Link>
             ))}
 
             <div className="flex-1"></div>
 
             <div>
-                <button
+                <a
+                    href="https://github.com/harshanabatagalla"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='flex items-center p-2 mb-2 mx-2 rounded hover:text-white cursor-pointer'
+                    title="Github"
                     onClick={() => {
-                        window.open('https://github.com/harshanabatagalla', '_blank');
                         // Auto-close menu after selection on mobile when expanded
                         if (isMobile && expanded) {
                             setExpanded(false);
                         }
                     }}
-                    className='flex items-center p-2 mb-2 mx-2 rounded hover:text-white cursor-pointer'
-                    title="Github"
                 >
                     <div className="min-w-6">
                         <Github size={24} />
@@ -122,17 +124,19 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
                     {expanded && (
                         <span className="ml-2">Github</span>
                     )}
-                </button>
-                <button
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/harshana-batagalla/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='flex items-center p-2 mb-2 mx-2 rounded hover:text-white cursor-pointer'
+                    title="LinkedIn"
                     onClick={() => {
-                        window.open('https://www.linkedin.com/in/harshana-batagalla/', '_blank')
                         // Auto-close menu after selection on mobile when expanded
                         if (isMobile && expanded) {
                             setExpanded(false);
                         }
                     }}
-                    className='flex items-center p-2 mb-2 mx-2 rounded hover:text-white cursor-pointer'
-                    title="LinkedIn"
                 >
                     <div className="min-w-6">
                         <Linkedin size={24} />
@@ -140,7 +144,7 @@ const ActivityBar = ({ activeSection, setActiveSection }) => {
                     {expanded && (
                         <span className="ml-2">LinkedIn</span>
                     )}
-                </button>
+                </a>
             </div>
         </div>
     );
