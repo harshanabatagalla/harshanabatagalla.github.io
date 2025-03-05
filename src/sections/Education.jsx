@@ -12,8 +12,8 @@ const Education = () => {
 
             <div className="space-y-8">
                 {educationData.map((education) => (
-                    <div key={education.id} className="bg-[#2D2D2D] rounded-lg p-6 border-l-4 border-[#007ACC]">
-                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                    <div key={education.id} className="bg-[#2D2D2D] rounded-lg p-6 border-l-4  transition-all duration-300 ease-in-out border-[#007ACC] hover:border-l-8 hover:shadow-lg ">
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 ">
                             <div>
                                 <h3 className="text-xl font-semibold text-white">{education.degree}</h3>
                                 <p className="text-[#007ACC]">{education.institution}</p>
