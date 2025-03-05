@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import TabBar from './components/TabBar';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ActivityBar from './components/ActivityBar';
+import TabBar from './components/Tabbar';
 import StatusBar from './components/StatusBar';
+
+// Import page components
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Work from './sections/Work';
@@ -11,40 +14,29 @@ import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('hero');
-
-  const renderSection = () => {
-    switch (activeSection) {
-      case 'about':
-        return <About />;
-      case 'work':
-        return <Work />;
-      case 'education':
-        return <Education />;
-      case 'projects':
-        return <Projects />;
-      case 'testimonials':
-        return <Testimonials />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Hero setActiveSection={setActiveSection} />;
-    }
-  };
-
   return (
-    <div className="h-full flex flex-col bg-[#1E1E1E] text-white">
-      <div className="flex-1 flex overflow-hidden">
-        <ActivityBar activeSection={activeSection} setActiveSection={setActiveSection} />
-        <div className="flex-1 flex flex-col overflow-hidden">
-          <TabBar activeSection={activeSection} setActiveSection={setActiveSection} />
-          <div className="flex-1 overflow-hidden">
-            {renderSection()}
+    <Router>
+      <div className="h-full flex flex-col bg-[#1E1E1E] text-white">
+        <div className="flex-1 flex overflow-hidden">
+          <ActivityBar />
+          <div className="flex-1 flex flex-col overflow-hidden">
+            <TabBar />
+            <div className="flex-1 overflow-hidden">
+              <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/education" element={<Education />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/testimonials" element={<Testimonials />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </div>
           </div>
         </div>
+        <StatusBar />
       </div>
-      <StatusBar />
-    </div>
+    </Router>
   );
 }
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Terminal } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
-const Hero = ({ setActiveSection }) => {
+const Hero = () => {
+    const navigate = useNavigate();
     return (
         <div className="h-full flex flex-col font-[JetBrains_Mono]">
             <div className="flex-1 p-6 overflow-auto flex items-center justify-center">
@@ -24,7 +26,7 @@ const Hero = ({ setActiveSection }) => {
                         </button>
                         <button
                             className="px-6 py-2 border border-gray-600 text-gray-300 rounded hover:bg-gray-700 transition-colors cursor-pointer"
-                            onClick={() => setActiveSection('contact')}
+                            onClick={() => navigate('/contact')}
                         >
                             Contact Me
                         </button>
