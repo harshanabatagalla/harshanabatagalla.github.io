@@ -35,7 +35,7 @@ const Testimonials = () => {
         {testimonials.map((testimonial) => (
           <div 
             key={testimonial.id} 
-            onClick={() => testimonial.text.length > 200 && toggleTestimonial(testimonial.id)}
+            onClick={(e) => testimonial.text.length > 200 && toggleTestimonial(testimonial.id, e)}
             className={`
               bg-[#2D2D2D] 
               rounded-lg 
