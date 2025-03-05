@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ActivityBar from './components/ActivityBar';
 import TabBar from './components/Tabbar';
 import StatusBar from './components/StatusBar';
@@ -30,6 +30,9 @@ function App() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contact" element={<Contact />} />
+                
+                {/* Redirect /portfolio to homepage */}
+                <Route path="/portfolio" element={<Navigate to="/" replace />} />
               </Routes>
             </div>
           </div>
