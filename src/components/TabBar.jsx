@@ -1,25 +1,26 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { X } from 'lucide-react';
+import { Base_Path } from '../utils/data';
 
 const TabBar = () => {
     const location = useLocation();
 
     const getTabName = (path) => {
         switch (path) {
-            case '/':
+            case `${Base_Path}`:
                 return 'welcome.jsx';
-            case '/about':
+            case `${Base_Path}/about`:
                 return 'about.jsx';
-            case '/work':
+            case `${Base_Path}/work`:
                 return 'experience.js';
-            case '/education':
+            case `${Base_Path}/education`:
                 return 'education.md';
-            case '/projects':
+            case `${Base_Path}/projects`:
                 return 'projects.json';
-            case '/testimonials':
+            case `${Base_Path}/testimonials`:
                 return 'testimonials.jsx';
-            case '/contact':
+            case `${Base_Path}/contact`:
                 return 'contact.jsx';
             default:
                 return 'welcome.jsx';
@@ -44,7 +45,7 @@ const TabBar = () => {
     };
 
     // Always show home tab
-    const homePath = '/';
+    const homePath = `${Base_Path}`;
     const activePath = location.pathname;
 
     return (
