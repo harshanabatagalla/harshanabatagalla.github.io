@@ -12,7 +12,7 @@ const Work = () => {
       
       <div className="space-y-8">
         {workExperiences.map((experience) => (
-          <div key={experience.id} className="bg-[#2D2D2D] rounded-lg p-6 border-l-4 border-[#007ACC]">
+          <div key={experience.id} className="bg-[#2D2D2D] rounded-lg p-6 border-l-4 transition-all duration-300 ease-in-out border-[#007ACC] hover:border-l-8 hover:shadow-lg">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
               <div>
                 <h3 className="text-xl font-semibold text-white">{experience.position}</h3>
