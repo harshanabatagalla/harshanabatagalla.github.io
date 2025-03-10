@@ -1,4 +1,7 @@
 import { assets } from "../assets/assets";
+
+export const Base_Path = "/portfolio";
+
 // Category colors mapping
 export const categoryColors = {
   "Frontend Technologies": "#61DAFB", // React blue

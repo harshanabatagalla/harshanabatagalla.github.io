@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import ActivityBar from './components/ActivityBar';
 import TabBar from './components/TabBar';
 import StatusBar from './components/StatusBar';
+import { Base_Path } from './utils/data';
 
 // Import page components
 import Hero from './sections/Hero';
@@ -23,16 +24,16 @@ function App() {
             <TabBar />
             <div className="flex-1 overflow-hidden">
               <Routes>
-                <Route path="/" element={<Hero />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/work" element={<Work />} />
-                <Route path="/education" element={<Education />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/testimonials" element={<Testimonials />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path={`${Base_Path}`} element={<Hero />} />
+                <Route path={`${Base_Path}/about`} element={<About />} />
+                <Route path={`${Base_Path}/work`} element={<Work />} />
+                <Route path={`${Base_Path}/education`} element={<Education />} />
+                <Route path={`${Base_Path}/projects`} element={<Projects />} />
+                <Route path={`${Base_Path}/testimonials`} element={<Testimonials />} />
+                <Route path={`${Base_Path}/contact`} element={<Contact />} />
                 
                 {/* Redirect /portfolio to homepage */}
-                <Route path="/portfolio" element={<Navigate to="/" replace />} />
+                {/* <Route path="/portfolio" element={<Navigate to="/" replace />} /> */}
               </Routes>
             </div>
           </div>
