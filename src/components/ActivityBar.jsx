@@ -13,6 +13,7 @@ import {
     PanelRightClose,
     PanelRightOpen
 } from 'lucide-react';
+import { Base_Path } from '../utils/data';
 
 const ActivityBar = () => {
     const [expanded, setExpanded] = useState(true);
@@ -47,13 +48,13 @@ const ActivityBar = () => {
     };
 
     const sections = [
-        { path: '/', icon: <Home size={24} />, label: 'Home' },
-        { path: '/about', icon: <User size={24} />, label: 'About' },
-        { path: '/work', icon: <Briefcase size={24} />, label: 'Work' },
-        { path: '/education', icon: <GraduationCap size={24} />, label: 'Education' },
-        { path: '/projects', icon: <FolderKanban size={24} />, label: 'Projects' },
-        { path: '/testimonials', icon: <MessageSquareQuote size={24} />, label: 'Testimonials' },
-        { path: '/contact', icon: <Mail size={24} />, label: 'Contact' },
+        { path: `${Base_Path}`, icon: <Home size={24} />, label: 'Home' },
+        { path: `${Base_Path}/about`, icon: <User size={24} />, label: 'About' },
+        { path: `${Base_Path}/work`, icon: <Briefcase size={24} />, label: 'Work' },
+        { path: `${Base_Path}/education`, icon: <GraduationCap size={24} />, label: 'Education' },
+        { path: `${Base_Path}/projects`, icon: <FolderKanban size={24} />, label: 'Projects' },
+        { path: `${Base_Path}/testimonials`, icon: <MessageSquareQuote size={24} />, label: 'Testimonials' },
+        { path: `${Base_Path}/contact`, icon: <Mail size={24} />, label: 'Contact' },
     ];
 
     // Container classes based on mobile/desktop and expanded/collapsed state
