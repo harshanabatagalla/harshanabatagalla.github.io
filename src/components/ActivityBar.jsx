@@ -62,11 +62,11 @@ const ActivityBar = () => {
     const containerClasses = isMobile
         ? expanded
             // Mobile expanded: fixed overlay on top of content
-            ? "fixed h-full z-50 w-48 shadow-lg flex flex-col py-4 bg-[#333333] text-gray-400 transition-all duration-300"
+            ? "fixed h-full z-50 w-48 shadow-lg flex flex-col py-4 bg-[#1f2428] text-gray-400 transition-all duration-300"
             // Mobile collapsed: normal sidebar
-            : "h-full w-16 flex flex-col py-4 bg-[#333333] text-gray-400 transition-all duration-300"
+            : "h-full w-16 flex flex-col py-4 bg-[#1f2428] text-gray-400 transition-all duration-300"
         : // Desktop: always normal sidebar, just different widths
-        `h-full flex flex-col py-4 bg-[#333333] text-gray-400 transition-all duration-300 ${expanded ? 'w-48' : 'w-16'
+        `h-full flex flex-col py-4 bg-[#1f2428] text-gray-400 transition-all duration-300 ${expanded ? 'w-48' : 'w-16'
         }`;
 
     return (
@@ -85,7 +85,7 @@ const ActivityBar = () => {
                 <Link
                     key={section.path}
                     to={section.path}
-                    className={`flex items-center p-2 px-4 mb-2 hover:text-white ${location.pathname === section.path ? 'text-white bg-[#252526] border-l-3 border-[#007ACC]' : ''
+                    className={`flex items-center p-2 px-4 mb-2 hover:text-white font-[JetBrains_Mono] ${location.pathname === section.path ? 'text-white bg-[#252526] border-l-3 border-[#f9826c]' : ''
                         }`}
                     title={section.label}
                     onClick={() => {

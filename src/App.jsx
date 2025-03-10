@@ -17,7 +17,7 @@ import Contact from './sections/Contact';
 function App() {
   return (
     <Router>
-      <div className="h-full flex flex-col bg-[#1E1E1E] text-white">
+      <div className="h-full flex flex-col bg-[#24292e] text-white">
         <div className="flex-1 flex overflow-hidden">
           <ActivityBar />
           <div className="flex-1 flex flex-col overflow-hidden">

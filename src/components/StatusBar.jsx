@@ -11,7 +11,7 @@ const StatusBar = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center px-4 py-1 bg-[#007ACC] text-white text-xs">
+    <div className="flex justify-between items-center px-4 py-1 bg-[#1f2428] text-white text-xs border-t border-[#1b1f23] font-[JetBrains_Mono]">
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-1">
           <GitBranch size={14} />
