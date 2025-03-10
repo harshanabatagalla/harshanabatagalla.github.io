@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { X } from 'lucide-react';
+import { Base_Path } from '../utils/data';
 
 const TabBar = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const [openTabs, setOpenTabs] = useState(['/']);
+    const [openTabs, setOpenTabs] = useState([`${Base_Path}`]);
 
     // Update openTabs when location changes (via ActivityBar clicks)
     useEffect(() => {
@@ -17,27 +18,25 @@ const TabBar = () => {
 
     const getTabName = (path) => {
         switch (path) {
-            case '/':
+            case `${Base_Path}`:
                 return 'welcome.jsx';
-            case '/about':
+            case `${Base_Path}/about`:
                 return 'about.jsx';
-            case '/work':
+            case `${Base_Path}/work`:
                 return 'experience.js';
-            case '/education':
+            case `${Base_Path}/education`:
                 return 'education.md';
-            case '/projects':
+            case `${Base_Path}/projects`:
                 return 'projects.json';
-            case '/testimonials':
+            case `${Base_Path}/testimonials`:
                 return 'testimonials.jsx';
-            case '/contact':
+            case `${Base_Path}/contact`:
                 return 'contact.jsx';
-            default:
-                return 'welcome.jsx';
         }
     };
 
     const getTabIcon = (path) => {
-        const fileExtension = getTabName(path).split('.').pop();
+        const fileExtension = getTabName(path)?.split('.').pop();
 
         switch (fileExtension) {
             case 'jsx':

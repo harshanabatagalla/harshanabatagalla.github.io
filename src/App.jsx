@@ -13,6 +13,7 @@ import Education from './sections/Education';
 import Projects from './sections/Projects';
 import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
+import { Base_Path } from './utils/data';
 
 function App() {
   return (
@@ -31,7 +32,6 @@ function App() {
                 <Route path={`${Base_Path}/projects`} element={<Projects />} />
                 <Route path={`${Base_Path}/testimonials`} element={<Testimonials />} />
                 <Route path={`${Base_Path}/contact`} element={<Contact />} />
-                
                 {/* Redirect /portfolio to homepage */}
                 {/* <Route path="/portfolio" element={<Navigate to="/" replace />} /> */}
               </Routes>
