@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <div id="projects-section" className="h-full p-6 overflow-auto font-[JetBrains_Mono]">
       <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-        <FolderKanban size={24} className="text-[#007ACC] mr-2" />
+        <FolderKanban size={24} className="text-[#f9826c] mr-2" />
         Projects
       </h2>
       
@@ -17,7 +17,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div 
             key={project.id} 
-            className="bg-[#2D2D2D] rounded-lg overflow-hidden border border-[#333333] hover:border-[#007ACC] transition-transform transform hover:scale-105 shadow-lg relative"
+            className="bg-[#1f2428] rounded-lg overflow-hidden border border-[#1f2428] hover:border-[#f9826c] transition-transform transform hover:scale-105 hover:shadow-lg relative"
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
           >
@@ -36,7 +36,7 @@ const Projects = () => {
                       href={project.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 bg-[#1E1E1E] rounded-full hover:bg-[#007ACC] transition-colors"
+                      className="p-2 bg-[#24292e] rounded-full hover:bg-[#f9826c] transition-colors"
                     >
                       <Github className="h-6 w-6 text-white" />
                     </a>
@@ -46,7 +46,7 @@ const Projects = () => {
                       href={project.liveUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-2 bg-[#1E1E1E] rounded-full hover:bg-[#007ACC] transition-colors"
+                      className="p-2 bg-[#24292e] rounded-full hover:bg-[#f9826c] transition-colors"
                     >
                       <ExternalLink className="h-6 w-6 text-white" />
                     </a>
@@ -63,7 +63,7 @@ const Projects = () => {
               
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="bg-[#1E1E1E] px-3 py-1 rounded-md text-xs text-[#007ACC]">
+                  <span key={tech} className="bg-[#24292e] px-3 py-1 rounded-md text-xs text-[#f9826c]">
                     {tech}
                   </span>
                 ))}
@@ -73,7 +73,7 @@ const Projects = () => {
         ))}
       </div>
       
-      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#333333]">
+      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#1f2428]">
         <p className="text-gray-400">
           <span className="text-green-400">// </span>
           More projects available on my GitHub profile. Check them out!

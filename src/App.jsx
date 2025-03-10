@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ActivityBar from './components/ActivityBar';
-import TabBar from './components/Tabbar';
+import TabBar from './components/TabBar';
 import StatusBar from './components/StatusBar';
 
 // Import page components
@@ -16,7 +16,7 @@ import Contact from './sections/Contact';
 function App() {
   return (
     <Router>
-      <div className="h-full flex flex-col bg-[#1E1E1E] text-white">
+      <div className="h-full flex flex-col bg-[#24292e] text-white">
         <div className="flex-1 flex overflow-hidden">
           <ActivityBar />
           <div className="flex-1 flex flex-col overflow-hidden">

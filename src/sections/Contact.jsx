@@ -60,7 +60,7 @@ const Contact = () => {
     return (
         <div id="contact-section" className="h-full p-6 overflow-auto">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Mail size={24} className="text-[#007ACC] mr-2" />
+                <Mail size={24} className="text-[#f9826c] mr-2" />
                 Contact Me
             </h2>
 
@@ -76,7 +76,7 @@ const Contact = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 bg-[#1E1E1E] border border-[#333333] rounded text-white focus:outline-none focus:border-[#007ACC]"
+                                className="w-full px-4 py-2 bg-[#1f2428] border border-[#252526] rounded text-white focus:outline-none focus:border-[#f9826c]"
                             />
                         </div>
 
@@ -89,7 +89,7 @@ const Contact = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 bg-[#1E1E1E] border border-[#333333] rounded text-white focus:outline-none focus:border-[#007ACC]"
+                                className="w-full px-4 py-2 bg-[#1f2428] border border-[#252526] rounded text-white focus:outline-none focus:border-[#f9826c]"
                             />
                         </div>
                         <div>
@@ -101,13 +101,13 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                                 rows={5}
-                                className="w-full px-4 py-2 bg-[#1E1E1E] border border-[#333333] rounded text-white focus:outline-none focus:border-[#007ACC]"
+                                className="w-full px-4 py-2 bg-[#1f2428] border border-[#252526] rounded text-white focus:outline-none focus:border-[#f9826c]"
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            className="px-6 py-2 bg-[#007ACC] text-white rounded flex items-center hover:bg-[#005A9C] transition-colors"
+                            className="px-6 py-2 bg-[#c56755] text-white rounded flex items-center hover:bg-[#924c3e] transition-colors cursor-pointer"
                         >
                             <Send size={16} className="mr-2" />
                             Send Message
@@ -115,12 +115,12 @@ const Contact = () => {
                     </form>
                 </div>
 
-                <div className="bg-[#2D2D2D] rounded-lg p-6 border border-[#333333]">
+                <div className="bg-[#1f2428] rounded-lg p-6 border border-[#1f2428]">
                     <h3 className="text-xl font-semibold text-white mb-4">Get In Touch</h3>
 
                     <div className="space-y-4">
                         <div className="flex items-start cursor-pointer" onClick={() => window.open('mailto:harshanabatagalla@gmail.com')}>
-                            <Mail size={20} className="text-[#007ACC] mt-1 mr-3" />
+                            <Mail size={20} className="text-[#f9826c] mt-1 mr-3" />
                             <div>
                                 <h4 className="text-white font-medium">Email</h4>
                                 <p className="text-gray-400">harshana.batagalla@gmail.com</p>
@@ -128,7 +128,7 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-start cursor-pointer" onClick={() => window.open('tel:+94763226659')}>
-                            <Phone size={20} className="text-[#007ACC] mt-1 mr-3" />
+                            <Phone size={20} className="text-[#f9826c] mt-1 mr-3" />
                             <div>
                                 <h4 className="text-white font-medium">Phone</h4>
                                 <p className="text-gray-400">+94 763226659</p>
@@ -136,7 +136,7 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-start">
-                            <MapPin size={20} className="text-[#007ACC] mt-1 mr-3" />
+                            <MapPin size={20} className="text-[#f9826c] mt-1 mr-3" />
                             <div>
                                 <h4 className="text-white font-medium">Location</h4>
                                 <p className="text-gray-400">Colombo, Sri Lanka.</p>
@@ -152,7 +152,7 @@ const Contact = () => {
                         </p>
                     </div>
 
-                    <div className="mt-6 p-4 bg-[#252526] rounded border border-[#333333]">
+                    <div className="mt-6 p-4 bg-[#252526] rounded-md border border-[#1f2428]">
                         <p className="text-gray-400">
                             <span className="text-green-400">// </span>
                             Response time: Usually within 24 hours

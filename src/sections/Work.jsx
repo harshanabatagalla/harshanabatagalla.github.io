@@ -6,17 +6,17 @@ const Work = () => {
   return (
     <div className="h-full p-6 overflow-auto font-[JetBrains_Mono]">
       <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-        <Briefcase size={24} className="text-[#007ACC] mr-2" />
+        <Briefcase size={24} className="text-[#f9826c] mr-2" />
         Work Experience
       </h2>
       
       <div className="space-y-8">
         {workExperiences.map((experience) => (
-          <div key={experience.id} className="bg-[#2D2D2D] rounded-lg p-6 border-l-4 transition-all duration-300 ease-in-out border-[#007ACC] hover:border-l-8 hover:shadow-lg">
+          <div key={experience.id} className="bg-[#1f2428] rounded-lg p-6 border-l-4 transition-all duration-300 ease-in-out border-[#f9826c] hover:border-l-8 hover:shadow-lg">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
               <div>
                 <h3 className="text-xl font-semibold text-white">{experience.position}</h3>
-                <p className="text-[#007ACC] text-xl">{experience.company}</p>
+                <p className="text-[#f9826c] text-xl">{experience.company}</p>
               </div>
               <span className="text-gray-400 mt-2 md:mt-0">{experience.duration}</span>
             </div>
@@ -30,7 +30,7 @@ const Work = () => {
         ))}
       </div>
       
-      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#333333]">
+      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#1f2428]">
         <p className="text-gray-400">
           <span className="text-green-400">// </span>
           Want to know more about my work experience? Feel free to contact me for a detailed resume.

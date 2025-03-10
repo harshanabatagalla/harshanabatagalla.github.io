@@ -27,7 +27,7 @@ const Testimonials = () => {
   return (
     <div className="h-full p-6 overflow-auto font-[JetBrains_Mono]">
       <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-        <MessageSquareQuote size={24} className="text-[#007ACC] mr-2" /> 
+        <MessageSquareQuote size={24} className="text-[#f9826c] mr-2" /> 
         Testimonials 
       </h2>
       
@@ -37,15 +37,15 @@ const Testimonials = () => {
             key={testimonial.id} 
             onClick={(e) => testimonial.text.length > 200 && toggleTestimonial(testimonial.id, e)}
             className={`
-              bg-[#2D2D2D] 
+              bg-[#1f2428] 
               rounded-lg 
               p-6 
               border 
-              border-[#333333]
+              border-[#1f2428]
               transition-all 
               duration-300 
               ease-in-out
-              ${testimonial.text.length > 200 ? 'cursor-pointer hover:border-[#007ACC] hover:shadow-lg' : ''}
+              ${testimonial.text.length > 200 ? 'cursor-pointer hover:border-[#f9826c] hover:shadow-lg' : ''}
             `}
           >
             <div className="flex items-start mb-4">
@@ -67,7 +67,7 @@ const Testimonials = () => {
             </div>
             
             <blockquote>
-              <span className="top-0 left-0 text-4xl text-[#007ACC] opacity-30">"</span>
+              <span className="top-0 left-0 text-4xl text-[#f9826c] opacity-30">"</span>
               <p 
                 dangerouslySetInnerHTML={{ 
                   __html: truncateText(
@@ -83,7 +83,7 @@ const Testimonials = () => {
                 <div className="flex justify-between items-center">
                   <button 
                     onClick={(e) => toggleTestimonial(testimonial.id, e)}
-                    className="flex items-center text-[#007ACC] hover:text-blue-600 mt-2 text-sm"
+                    className="flex items-center text-[#f9826c] hover:text-blue-600 mt-2 text-sm"
                   >
                     {expandedTestimonials[testimonial.id] ? (
                       <>
@@ -102,7 +102,7 @@ const Testimonials = () => {
         ))}
       </div>
       
-      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#333333]">
+      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#1f2428]">
         <p className="text-gray-400">
           <span className="text-green-400">// </span> 
           These testimonials reflect my commitment to delivering high-quality work and maintaining excellent professional relationships.

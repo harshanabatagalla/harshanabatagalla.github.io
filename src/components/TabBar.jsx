@@ -72,13 +72,13 @@ const TabBar = () => {
     };
 
     return (
-        <div className="flex bg-[#252526] border-b border-[#1E1E1E] overflow-x-auto font-[JetBrains_Mono]">
+        <div className="flex bg-[#1f2428] border-b border-[#24292e] overflow-x-auto font-[JetBrains_Mono]">
             {openTabs.map((tabPath, index) => (
                 <Link
                     key={tabPath}
                     to={tabPath}
-                    className={`flex items-center px-4 py-2 border-r border-[#1E1E1E] cursor-pointer ${
-                        tabPath === location.pathname ? 'bg-[#1E1E1E]' : 'bg-[#2D2D2D]'
+                    className={`flex items-center px-4 py-2 border-r border-t-1 border-[#24292e] cursor-pointer ${
+                        tabPath === location.pathname ? 'bg-[#24292e] border-t-[#f9826c]' : 'bg-[#1f2428]'
                     }`}
                 >
                     <span className={`mr-2 ${getTabIcon(tabPath)}`}>●</span>

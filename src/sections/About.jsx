@@ -16,11 +16,11 @@ const About = () => {
     <div className="h-full p-6 overflow-auto font-[JetBrains_Mono]">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-          <User size={24} className="text-[#007ACC] mr-2" />
+          <User size={24} className="text-[#f9826c] mr-2" />
           About Me
         </h2>
         
-        <div className="space-y-4 text-gray-300 bg-[#2D2D2D] rounded-lg p-6 border border-[#333333]">
+        <div className="space-y-4 text-gray-300 bg-[#1f2428] rounded-lg p-6 border border-[#1f2428]">
           <p>
             A self-motivated and skillful undergraduate, with a great interest in problem-solving.
             Skilled in JavaScript and TypeScript, with expertise in React and Node.js frameworks.
@@ -36,7 +36,7 @@ const About = () => {
         <div className="mt-8">
           <h3 className="text-xl font-semibold text-white mb-6">Skills</h3>
           
-          <div className="space-y-8 bg-[#2D2D2D] rounded-lg p-6 border border-[#333333]">
+          <div className="space-y-8 bg-[#1f2428] rounded-lg p-6 border border-[#1f2428]">
             {Object.entries(techSkills).map(([category, skills]) => (
               <div key={category} className="mb-6 py-4 ">
                 <div 
