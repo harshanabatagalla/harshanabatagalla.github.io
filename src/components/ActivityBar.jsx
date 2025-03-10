@@ -15,7 +15,6 @@ import {
     PanelRightClose,
     PanelRightOpen
 } from 'lucide-react';
-import { Base_Path } from '../utils/data';
 
 const ActivityBar = () => {
     const [expanded, setExpanded] = useState(true);

@@ -13,7 +13,6 @@ import Education from './sections/Education';
 import Projects from './sections/Projects';
 import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
-import { Base_Path } from './utils/data';
 
 function App() {
   return (
