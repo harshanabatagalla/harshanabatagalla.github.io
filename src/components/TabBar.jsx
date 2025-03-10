@@ -1,9 +1,19 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { X } from 'lucide-react';
 
 const TabBar = () => {
     const location = useLocation();
+    const navigate = useNavigate();
+    const [openTabs, setOpenTabs] = useState(['/']);
+
+    // Update openTabs when location changes (via ActivityBar clicks)
+    useEffect(() => {
+        // Only add new tabs, don't replace existing
+        if (!openTabs.includes(location.pathname)) {
+            setOpenTabs(prev => [...prev, location.pathname]);
+        }
+    }, [location.pathname]);
 
     const getTabName = (path) => {
         switch (path) {
@@ -43,38 +53,44 @@ const TabBar = () => {
         }
     };
 
-    // Always show home tab
-    const homePath = '/';
-    const activePath = location.pathname;
+    // Handle tab close
+    const handleCloseTab = (e, tabPath) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Don't close if it's the last tab
+        if (openTabs.length <= 1) return;
+        
+        // Remove the tab
+        const newTabs = openTabs.filter(tab => tab !== tabPath);
+        setOpenTabs(newTabs);
+        
+        // If closing the active tab, navigate to the last tab in the list
+        if (tabPath === location.pathname) {
+            navigate(newTabs[newTabs.length - 1]);
+        }
+    };
 
     return (
         <div className="flex bg-[#252526] border-b border-[#1E1E1E] overflow-x-auto font-[JetBrains_Mono]">
-            <Link
-                to={homePath}
-                className={`flex items-center px-4 py-2 border-r border-[#1E1E1E] cursor-pointer ${
-                    homePath === activePath ? 'bg-[#1E1E1E]' : 'bg-[#2D2D2D]'
-                }`}
-            >
-                <span className={`mr-2 ${getTabIcon(homePath)}`}>●</span>
-                <span className="text-gray-300">{getTabName(homePath)}</span>
-                <X size={14} className="ml-2 text-gray-500 hover:text-white" />
-            </Link>
-
-            {activePath !== homePath && (
+            {openTabs.map((tabPath, index) => (
                 <Link
-                    to={activePath}
-                    className="flex items-center px-4 py-2 border-r border-[#1E1E1E] bg-[#1E1E1E] cursor-pointer"
+                    key={tabPath}
+                    to={tabPath}
+                    className={`flex items-center px-4 py-2 border-r border-[#1E1E1E] cursor-pointer ${
+                        tabPath === location.pathname ? 'bg-[#1E1E1E]' : 'bg-[#2D2D2D]'
+                    }`}
                 >
-                    <span className={`mr-2 ${getTabIcon(activePath)}`}>●</span>
-                    <span className="text-gray-300">{getTabName(activePath)}</span>
-                    <Link 
-                        to={homePath} 
-                        className="ml-2"
+                    <span className={`mr-2 ${getTabIcon(tabPath)}`}>●</span>
+                    <span className="text-gray-300">{getTabName(tabPath)}</span>
+                    <span 
+                        onClick={(e) => handleCloseTab(e, tabPath)}
+                        className="ml-2 cursor-pointer"
                     >
                         <X size={14} className="text-gray-500 hover:text-white" />
-                    </Link>
+                    </span>
                 </Link>
-            )}
+            ))}
         </div>
     );
 };
