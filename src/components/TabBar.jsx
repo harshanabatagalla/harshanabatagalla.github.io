@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { Base_Path } from '../utils/data';
 
 const TabBar = () => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     const getTabName = (path) => {
         switch (path) {
@@ -48,6 +49,13 @@ const TabBar = () => {
     const homePath = `${Base_Path}`;
     const activePath = location.pathname;
 
+    // Function to handle close tab click
+    const handleCloseTab = (e, path) => {
+        e.preventDefault();
+        e.stopPropagation();
+        navigate(homePath);
+    };
+
     return (
         <div className="flex bg-[#252526] border-b border-[#1E1E1E] overflow-x-auto font-[JetBrains_Mono]">
             <Link
@@ -58,7 +66,11 @@ const TabBar = () => {
             >
                 <span className={`mr-2 ${getTabIcon(homePath)}`}>●</span>
                 <span className="text-gray-300">{getTabName(homePath)}</span>
-                <X size={14} className="ml-2 text-gray-500 hover:text-white" />
+                <X 
+                    size={14} 
+                    className="ml-2 text-gray-500 hover:text-white" 
+                    onClick={(e) => handleCloseTab(e, homePath)}
+                />
             </Link>
 
             {activePath !== homePath && (
@@ -68,12 +80,11 @@ const TabBar = () => {
                 >
                     <span className={`mr-2 ${getTabIcon(activePath)}`}>●</span>
                     <span className="text-gray-300">{getTabName(activePath)}</span>
-                    <Link 
-                        to={homePath} 
-                        className="ml-2"
-                    >
-                        <X size={14} className="text-gray-500 hover:text-white" />
-                    </Link>
+                    <X 
+                        size={14} 
+                        className="ml-2 text-gray-500 hover:text-white cursor-pointer" 
+                        onClick={(e) => handleCloseTab(e, activePath)}
+                    />
                 </Link>
             )}
         </div>
