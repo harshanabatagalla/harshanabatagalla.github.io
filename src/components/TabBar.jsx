@@ -6,15 +6,22 @@ import { Base_Path } from '../utils/data';
 const TabBar = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const [openTabs, setOpenTabs] = useState([`${Base_Path}`]);
+    
+    // Use localStorage to persist open tabs across reloads
+    const [openTabs, setOpenTabs] = useState(() => {
+        const savedTabs = localStorage.getItem('openTabs');
+        return savedTabs ? JSON.parse(savedTabs) : [`${Base_Path}`];
+    });
 
     // Update openTabs when location changes (via ActivityBar clicks)
     useEffect(() => {
         // Only add new tabs, don't replace existing
         if (!openTabs.includes(location.pathname)) {
-            setOpenTabs(prev => [...prev, location.pathname]);
+            const newTabs = [...openTabs, location.pathname];
+            setOpenTabs(newTabs);
+            localStorage.setItem('openTabs', JSON.stringify(newTabs));
         }
-    }, [location.pathname]);
+    }, [location.pathname, openTabs]);
 
     const getTabName = (path) => {
         switch (path) {
@@ -32,12 +39,13 @@ const TabBar = () => {
                 return 'testimonials.jsx';
             case `${Base_Path}/contact`:
                 return 'contact.jsx';
+            default:
+                return 'unknown.file';
         }
     };
 
     const getTabIcon = (path) => {
         const fileExtension = getTabName(path)?.split('.').pop();
-
         switch (fileExtension) {
             case 'jsx':
                 return 'text-blue-400';
@@ -63,6 +71,7 @@ const TabBar = () => {
         // Remove the tab
         const newTabs = openTabs.filter(tab => tab !== tabPath);
         setOpenTabs(newTabs);
+        localStorage.setItem('openTabs', JSON.stringify(newTabs));
         
         // If closing the active tab, navigate to the last tab in the list
         if (tabPath === location.pathname) {
@@ -72,7 +81,7 @@ const TabBar = () => {
 
     return (
         <div className="flex bg-[#1f2428] border-b border-[#24292e] overflow-x-auto font-[JetBrains_Mono]">
-            {openTabs.map((tabPath, index) => (
+            {openTabs.map((tabPath) => (
                 <Link
                     key={tabPath}
                     to={tabPath}
