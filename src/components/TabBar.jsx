@@ -19,6 +19,7 @@ const TabBar = () => {
     const getTabName = (path) => {
         switch (path) {
             case `${Base_Path}`:
+            case `${Base_Path}/`:
                 return 'welcome.jsx';
             case `${Base_Path}/about`:
                 return 'about.jsx';
