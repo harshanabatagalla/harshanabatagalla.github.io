@@ -1,12 +1,10 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { User, Layout, Server, Code, Database, Wrench } from 'lucide-react';
-import { techSkills } from '../utils/data'; // Assuming techSkills is an object with category and skills
-
-// Import react-icons for skill icons
+import { techSkills } from '../utils/data';
 import { FaReact, FaNodeJs, FaAngular, FaAws, FaPython, FaJava, FaGit, FaDocker } from 'react-icons/fa';
 import { SiTypescript, SiMongodb, SiPostgresql, SiGraphql, SiJest, SiDotnet, SiJavascript } from 'react-icons/si';
 
-// Mapping of skill names to their respective icons
 const skillIcons = {
   "React": <FaReact className="w-4 h-4 mr-2" />,
   "Node.js": <FaNodeJs className="w-4 h-4 mr-2" />,
@@ -25,26 +23,35 @@ const skillIcons = {
   ".NET": <SiDotnet className="w-4 h-4 mr-2" />,
 };
 
-const About = () => {
-  // Category icons mapping
-  const categoryIcons = {
-    "Frontend Technologies": <Layout size={20} className="text-[#f9826c]" />,
-    "Backend Technologies": <Server size={20} className="text-[#f9826c]" />,
-    "Programming Languages": <Code size={20} className="text-[#f9826c]" />,
-    "Database": <Database size={20} className="text-[#f9826c]" />,
-    "Other Tools": <Wrench size={20} className="text-[#f9826c]" />
-  };
+const categoryIcons = {
+  "Frontend Technologies": <Layout size={20} className="text-[#f9826c]" />,
+  "Backend Technologies": <Server size={20} className="text-[#f9826c]" />,
+  "Programming Languages": <Code size={20} className="text-[#f9826c]" />,
+  "Database": <Database size={20} className="text-[#f9826c]" />,
+  "Other Tools": <Wrench size={20} className="text-[#f9826c]" />
+};
 
+const About = () => {
   return (
     <div className="h-full p-4 overflow-auto font-[JetBrains_Mono] bg-[#24292e] text-gray-300">
       <div className="max-w-3xl mx-auto">
-        {/* About Me Section */}
-        <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+        <motion.h2
+          className="text-2xl font-bold text-white mb-6 flex items-center"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <User size={24} className="text-[#f9826c] mr-2" />
           About Me
-        </h2>
+        </motion.h2>
         
-        <div className="space-y-4 bg-[#1f2428] rounded-lg p-5 border border-[#24292e]">
+        <motion.div
+          className="space-y-4 bg-[#1f2428] rounded-lg p-5 border border-[#24292e]"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <p>
             A self-motivated and skillful undergraduate, with a great interest in problem-solving.
             Skilled in JavaScript and TypeScript, with expertise in React and Node.js frameworks.
@@ -54,16 +61,29 @@ const About = () => {
             With extensive hands-on experience, I excel in developing dynamic and user-friendly web applications, both on the frontend and backend.
             I stay updated with industry trends, ensuring my skills remain current. As a fast learner, I adapt swiftly to new technologies and environments, consistently delivering high-quality solutions.
           </p>
-        </div>
+        </motion.div>
         
-        {/* Skills Section */}
         <div className="mt-8">
-          <h3 className="text-xl font-semibold text-white mb-6">Skills</h3>
+          <motion.h3
+            className="text-xl font-semibold text-white mb-6"
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Skills
+          </motion.h3>
           
           <div className="space-y-6">
-            {Object.entries(techSkills).map(([category, skills]) => (
-              <div key={category} className="bg-[#1f2428] rounded-lg p-5 border border-[#30363d]">
-                {/* Category Header */}
+            {Object.entries(techSkills).map(([category, skills], index) => (
+              <motion.div
+                key={category}
+                className="bg-[#1f2428] rounded-lg p-5 border border-[#30363d] opacity-0"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
                 <div className="flex items-center mb-4">
                   <div className="mr-3 p-2 rounded-md bg-[#24292e] text-[#f9826c]">
                     {categoryIcons[category]}
@@ -73,7 +93,6 @@ const About = () => {
                   </h4>
                 </div>
                 
-                {/* Skills List */}
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <div 
@@ -85,7 +104,7 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
