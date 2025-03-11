@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { projects } from '../utils/data';
 import { FolderKanban, Github, ExternalLink } from 'lucide-react';
 import { assets } from '../assets/assets';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -15,18 +16,22 @@ const Projects = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <div 
+          <motion.div 
             key={project.id} 
             className="bg-[#1f2428] rounded-lg overflow-hidden border border-[#1f2428] hover:border-[#f9826c] transition-transform transform hover:scale-105 hover:shadow-lg relative"
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
           >
             {project.image && (
               <div className="h-48 w-full relative overflow-hidden">
-                <img 
+                <motion.img 
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500 transform hover:scale-110"
+                  whileHover={{ scale: 1.1 }}
                 />
                 <div 
                   className={`absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center space-x-4 transition-opacity duration-300 ${hoveredProject === index ? 'opacity-100' : 'opacity-0'}`}
@@ -69,16 +74,21 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       
-      <div className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#1f2428]">
+      <motion.div 
+        className="mt-8 p-4 bg-[#252526] rounded-lg border border-[#1f2428]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <p className="text-gray-400">
           <span className="text-green-400">// </span>
           More projects available on my GitHub profile. Check them out!
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };
