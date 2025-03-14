@@ -48,7 +48,7 @@ const Education = () => {
                 Education
             </motion.h2>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
                 {educationData.map((education, index) => (
                     <motion.div
                         key={education.id}
