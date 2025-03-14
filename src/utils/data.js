@@ -1,6 +1,6 @@
 import { assets } from "../assets/assets";
 
-export const Base_Path = "/portfolio";
+export const Base_Path = "";
 
 // Category colors mapping
 export const categoryColors = {

@@ -7,25 +7,22 @@ const TabBar = () => {
     const location = useLocation();
     const navigate = useNavigate();
     
-    // Use localStorage to persist open tabs across reloads
-    const [openTabs, setOpenTabs] = useState(() => {
-        const savedTabs = localStorage.getItem('openTabs');
-        return savedTabs ? JSON.parse(savedTabs) : [`${Base_Path}`];
-    });
-
+    // Track open tabs in state, but initialize with only the current path
+    const [openTabs, setOpenTabs] = useState([location.pathname]);
+    
     // Update openTabs when location changes (via ActivityBar clicks)
     useEffect(() => {
         // Only add new tabs, don't replace existing
         if (!openTabs.includes(location.pathname)) {
             const newTabs = [...openTabs, location.pathname];
             setOpenTabs(newTabs);
-            localStorage.setItem('openTabs', JSON.stringify(newTabs));
         }
-    }, [location.pathname, openTabs]);
+    }, [location.pathname]);
 
     const getTabName = (path) => {
         switch (path) {
             case `${Base_Path}`:
+            case `/`:
             case `${Base_Path}/`:
                 return 'welcome.jsx';
             case `${Base_Path}/about`:
@@ -72,7 +69,6 @@ const TabBar = () => {
         // Remove the tab
         const newTabs = openTabs.filter(tab => tab !== tabPath);
         setOpenTabs(newTabs);
-        localStorage.setItem('openTabs', JSON.stringify(newTabs));
         
         // If closing the active tab, navigate to the last tab in the list
         if (tabPath === location.pathname) {
@@ -92,7 +88,7 @@ const TabBar = () => {
                 >
                     <span className={`mr-2 ${getTabIcon(tabPath)}`}>●</span>
                     <span className="text-gray-300">{getTabName(tabPath)}</span>
-                    <span 
+                    <span
                         onClick={(e) => handleCloseTab(e, tabPath)}
                         className="ml-2 cursor-pointer"
                     >
