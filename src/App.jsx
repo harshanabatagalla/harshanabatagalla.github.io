@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter  as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ActivityBar from './components/ActivityBar';
 import TabBar from './components/TabBar';
 import StatusBar from './components/StatusBar';
