@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { User, Layout, Server, Code, Database, Wrench } from 'lucide-react';
 import { techSkills } from '../utils/data';
 import { FaReact, FaNodeJs, FaAngular, FaAws, FaPython, FaJava, FaGit, FaDocker } from 'react-icons/fa';
@@ -32,14 +32,26 @@ const categoryIcons = {
 };
 
 const About = () => {
+  // Single animation control for the entire component
+  const controls = useAnimation();
+
+  // Start animations immediately when component mounts
+  useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    });
+  }, [controls]);
+
   return (
-    <div className="h-full p-4 overflow-auto font-[JetBrains_Mono] bg-[#24292e] text-gray-300">
+    <div className="h-full p-4 overflow-auto font-[JetBrains_Mono] bg-[#24292e] text-gray-300" >
       <div className="max-w-3xl mx-auto">
         <motion.h2
           className="text-2xl font-bold text-white mb-6 flex items-center"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <User size={24} className="text-[#f9826c] mr-2" />
           About Me
@@ -48,9 +60,7 @@ const About = () => {
         <motion.div
           className="space-y-4 bg-[#1f2428] rounded-lg p-5 border border-[#24292e]"
           initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
+          animate={controls}
         >
           <p>
             A self-motivated and skillful undergraduate, with a great interest in problem-solving.
@@ -67,9 +77,7 @@ const About = () => {
           <motion.h3
             className="text-xl font-semibold text-white mb-6"
             initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true }}
+            animate={controls}
           >
             Skills
           </motion.h3>
@@ -78,11 +86,15 @@ const About = () => {
             {Object.entries(techSkills).map(([category, skills], index) => (
               <motion.div
                 key={category}
-                className="bg-[#1f2428] rounded-lg p-5 border border-[#30363d] opacity-0"
+                className="bg-[#1f2428] rounded-lg p-5 border border-[#30363d]"
                 initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                viewport={{ once: true }}
+                animate={controls}
+                transition={{ 
+                  duration: 0.4, 
+                  ease: "easeOut",
+                  // Small stagger but much faster overall
+                  delay: 0.05 * index 
+                }}
               >
                 <div className="flex items-center mb-4">
                   <div className="mr-3 p-2 rounded-md bg-[#24292e] text-[#f9826c]">

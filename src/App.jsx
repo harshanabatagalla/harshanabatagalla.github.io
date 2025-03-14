@@ -4,6 +4,8 @@ import ActivityBar from './components/ActivityBar';
 import TabBar from './components/TabBar';
 import StatusBar from './components/StatusBar';
 import { Base_Path } from './utils/data';
+import { Cursor } from 'react-creative-cursor';
+import 'react-creative-cursor/dist/styles.css';
 
 // Import page components
 import Hero from './sections/Hero';
@@ -16,13 +18,14 @@ import Contact from './sections/Contact';
 
 function App() {
   return (
-    <Router>
-      <div className="h-full flex flex-col bg-[#24292e] text-white">
+    <Router >
+      <Cursor isGelly={true} cursorSize={30} cursorBackgrounColor="rgba(249, 130, 108, 0.5)" />
+      <div className="h-full flex flex-col bg-[#24292e] text-white" >
         <div className="flex-1 flex overflow-hidden">
           <ActivityBar />
           <div className="flex-1 flex flex-col overflow-hidden">
             <TabBar />
-            <div className="flex-1 overflow-hidden">
+            <div className="flex-1 overflow-auto">
               <Routes>
                 <Route path={`${Base_Path}`} element={<Hero />} />
                 <Route path={`${Base_Path}/about`} element={<About />} />
