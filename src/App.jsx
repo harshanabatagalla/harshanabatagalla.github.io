@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { HashRouter  as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ActivityBar from './components/ActivityBar';
 import TabBar from './components/TabBar';
