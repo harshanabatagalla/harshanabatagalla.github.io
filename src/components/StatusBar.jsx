@@ -11,7 +11,7 @@ const StatusBar = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center px-4 py-1 bg-[#1f2428] text-white text-xs border-t border-[#1b1f23] font-[JetBrains_Mono]">
+    <div className="flex justify-between items-center px-4 py-1 bg-[#1f2428] text-white text-xs border-t border-[#414246] font-[JetBrains_Mono]">
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-1">
           <GitBranch size={14} />
@@ -22,7 +22,7 @@ const StatusBar = () => {
           <div>UTF-8</div>
         </>}
       </div>
-      {!isMobile && <div>Made with ❤︎ by Harshana </div>}
+      {!isMobile && <span>All rights reserved © {new Date().getFullYear()} | Made with ❤︎ by Harshana </span>}
 
       {!isMobile && <div className="flex items-center space-x-4">
         <div>Ln 42, Col 18</div>

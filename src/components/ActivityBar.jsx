@@ -50,7 +50,7 @@ const ActivityBar = () => {
 
     const sections = [
         { path: `${Base_Path}` || '/', icon: <Home size={24} />, label: 'Home' },
-        { path: `${Base_Path}/about`, icon: <User size={24} />, label: 'About' },
+        { path: `${Base_Path}/about`, icon: <User size={24} />, label: 'About Me' },
         { path: `${Base_Path}/work`, icon: <Briefcase size={24} />, label: 'Work' },
         { path: `${Base_Path}/education`, icon: <GraduationCap size={24} />, label: 'Education' },
         { path: `${Base_Path}/projects`, icon: <FolderKanban size={24} />, label: 'Projects' },

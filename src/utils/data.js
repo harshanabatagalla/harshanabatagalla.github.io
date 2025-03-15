@@ -12,35 +12,35 @@ export const categoryColors = {
 };
 export const techSkills = {
   "Frontend Technologies": [
-    { name: "HTML5", borderColor: "#E34F26" },
-    { name: "CSS3", borderColor: "#1572B6" },
-    { name: "React", borderColor: "#61DAFB" },
-    { name: "Angular", borderColor: "#DD0031" },
-    { name: "Vite", borderColor: "#646CFF" },
-    { name: "Gatsby", borderColor: "#663399" },
-    { name: "Next.js", borderColor: "#0070f3" },
-    { name: "Bootstrap", borderColor: "#7952B3" },
-    { name: "MaterialUI", borderColor: "#0081CB" },
-    { name: "Tailwind", borderColor: "#06B6D4" },
-    { name: "Sass", borderColor: "#CC6699" },
-    { name: "GraphQL", borderColor: "#E535AB" }
+    { name: "HTML5", icon: assets.html },
+    { name: "CSS3", icon: assets.css },
+    { name: "React", icon: assets.reactjs },
+    { name: "Angular", icon: assets.angular },
+    { name: "Vite", icon: assets.vitejs },
+    { name: "Gatsby", icon: assets.gatsby },
+    { name: "Bootstrap", icon: assets.bootstrap },
+    { name: "Material-UI", icon: assets.materialui },
+    { name: "Tailwind", icon: assets.tailwind },
+    { name: "Sass", icon: assets.sass },
+    { name: "GraphQL", icon: assets.graphql }
   ],
   "Backend Technologies": [
-    { name: "Node.js", borderColor: "#68A063" },
-    { name: ".NET", borderColor: "#512BD4" }
+    { name: "Node.js", icon: assets.nodejs },
+    { name: ".NET", icon: assets.dotnet }
   ],
   "Programming Languages": [
-    { name: "JavaScript", borderColor: "#F7DF1E" },
-    { name: "TypeScript", borderColor: "#3178C6" },
-    { name: "Java", borderColor: "#007396" },
-    { name: "Python", borderColor: "#3776AB" }
+    { name: "Java", icon: assets.java },
+    { name: "Python", icon: assets.python },
+    { name: "JavaScript", icon: assets.javascript },
+    { name: "TypeScript", icon: assets.typescript }
   ],
   "Database": [
-    { name: "MongoDB", borderColor: "#4DB33D" },
-    { name: "MySQL", borderColor: "#4479A1" },
-    { name: "MSSQL", borderColor: "#CC2927" }
+    { name: "MySQL", icon: assets.mysql },
+    { name: "MSSQL", icon: assets.mssql },
+    { name: "MongoDB", icon: assets.mongodb }
   ],
 };
+
 export const workExperiences = [
   {
     id: 1,
