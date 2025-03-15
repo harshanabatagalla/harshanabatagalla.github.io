@@ -64,7 +64,7 @@ const Projects = () => {
               <h3 className="text-xl font-semibold text-white mb-2 flex items-center">
                 {project.title}
               </h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
+              <p className="text-gray-300 mb-4 text-xs sm:text-sm">{project.description}</p>
               
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.technologies.map((tech) => (
