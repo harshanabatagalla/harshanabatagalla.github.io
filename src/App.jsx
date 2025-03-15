@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'; 
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; 
-import ActivityBar from './components/ActivityBar'; 
-import TabBar from './components/TabBar'; 
-import StatusBar from './components/StatusBar'; 
-import { Base_Path } from './utils/data'; 
-import { Cursor } from 'react-creative-cursor'; 
-import 'react-creative-cursor/dist/styles.css';  
+import React from 'react';
+import { HashRouter  as Router, Routes, Route, Navigate } from 'react-router-dom';
+import ActivityBar from './components/ActivityBar';
+import TabBar from './components/TabBar';
+import StatusBar from './components/StatusBar';
+import { Base_Path } from './utils/data';
+import { Cursor } from 'react-creative-cursor';
+import 'react-creative-cursor/dist/styles.css';
 
 // Import page components 
 import Hero from './sections/Hero'; 
