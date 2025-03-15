@@ -2,26 +2,6 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { User, Layout, Server, Code, Database, Wrench } from 'lucide-react';
 import { techSkills } from '../utils/data';
-import { FaReact, FaNodeJs, FaAngular, FaAws, FaPython, FaJava, FaGit, FaDocker } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiPostgresql, SiGraphql, SiJest, SiDotnet, SiJavascript } from 'react-icons/si';
-
-const skillIcons = {
-  "React": <FaReact className="w-4 h-4 mr-2" />,
-  "Node.js": <FaNodeJs className="w-4 h-4 mr-2" />,
-  "Angular": <FaAngular className="w-4 h-4 mr-2" />,
-  "TypeScript": <SiTypescript className="w-4 h-4 mr-2" />,
-  "JavaScript": <SiJavascript className="w-4 h-4 mr-2" />,
-  "MongoDB": <SiMongodb className="w-4 h-4 mr-2" />,
-  "PostgreSQL": <SiPostgresql className="w-4 h-4 mr-2" />,
-  "GraphQL": <SiGraphql className="w-4 h-4 mr-2" />,
-  "AWS": <FaAws className="w-4 h-4 mr-2" />,
-  "Python": <FaPython className="w-4 h-4 mr-2" />,
-  "Java": <FaJava className="w-4 h-4 mr-2" />,
-  "Git": <FaGit className="w-4 h-4 mr-2" />,
-  "Docker": <FaDocker className="w-4 h-4 mr-2" />,
-  "Jest": <SiJest className="w-4 h-4 mr-2" />,
-  ".NET": <SiDotnet className="w-4 h-4 mr-2" />,
-};
 
 const categoryIcons = {
   "Frontend Technologies": <Layout size={20} className="text-[#f9826c]" />,
@@ -58,7 +38,7 @@ const About = () => {
         </motion.h2>
         
         <motion.div
-          className="space-y-4 bg-[#1f2428] rounded-lg p-5 border border-[#24292e]"
+          className="space-y-4 bg-[#1f2428] rounded-lg p-5 border border-[#24292e] md:text-lg text-sm"
           initial={{ opacity: 0, y: 10 }}
           animate={controls}
         >
@@ -100,18 +80,18 @@ const About = () => {
                   <div className="mr-3 p-2 rounded-md bg-[#24292e] text-[#f9826c]">
                     {categoryIcons[category]}
                   </div>
-                  <h4 className="text-lg font-medium text-white">
+                  <h4 className="md:text-lg text:md font-medium text-white">
                     {category}
                   </h4>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="grid md:grid-cols-3 sm:grid-cols-2 cols-1 gap-4">
                   {skills.map((skill) => (
                     <div 
                       key={skill.name}
-                      className="flex items-center px-3 py-1.5 rounded-md bg-[#2c313a] text-sm text-gray-300 hover:bg-[#30363d] transition-all"
+                      className="flex items-center px-3 py-1.5 rounded-md bg-[#2c313a] text-sm text-gray-300 hover:bg-[#30363d] transition-all md:gap-0 gap-3"
                     >
-                      {skillIcons[skill.name] || <Code className="w-4 h-4 mr-2" />}
+                      <img src={skill.icon} alt={skill.name} className="w-10 h-10 mr-2" />
                       <span>{skill.name}</span>
                     </div>
                   ))}
