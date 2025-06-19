@@ -119,6 +119,22 @@ export const certifications = [
     },
     {
       id: 2,
+      title: "Journey Jive",
+      description: "This project aims to develop a travel planning system that optimizes multi-destination trips by minimizing travel distances. It includes features such as real-time weather updates, future forecasts, and a trip-scoring system based on user reviews. Suggests nearby places of interest, enhancing the overall travel experience.",
+      technologies: ["React", "NodeJs", "MySQL", "Express", "Material UI"],
+      githubUrl: "https://github.com/harshanabatagalla/journey-jive",
+      image: assets.journeyJive
+    },
+    {
+      id: 3,
+      title: "AI Mushroom Classification System",
+      description: "A web application that utilizes machine learning to classify mushrooms based on user-uploaded images. The system employs a pre-trained model to predict the type of mushroom and provides information about its edibility, enhancing user awareness and safety in mushroom foraging.",
+      technologies: ["React", "NodeJs", "MySQL", "Express", "Python","TensorFlow"],
+      githubUrl: "https://github.com/harshanabatagalla/mushroom-classifier-AI",
+      image: assets.mushroom
+    },
+    {
+      id: 4,
       title: "Umbrella Go",
       description: "A front-end weather application that fetches weather data from the OpenWeatherMap API and displays it to the user. Users can search for weather data by city name and view the current weather, temperature, wind speed and humidity levels, as well as the weather forecast for the next 16 days",
       technologies: ["React", "Material UI", "OpenWeatherMap API"],
@@ -127,15 +143,7 @@ export const certifications = [
       image: assets.umbrellaGo
     },
     {
-      id: 3,
-      title: "Journey Jive",
-      description: "This project aims to develop a travel planning system that optimizes multi-destination trips by minimizing travel distances. It includes features such as real-time weather updates, future forecasts, and a trip-scoring system based on user reviews. Suggests nearby places of interest, enhancing the overall travel experience.",
-      technologies: ["React", "NodeJs", "MySQL", "Express", "Material UI"],
-      githubUrl: "https://github.com/harshanabatagalla/journey-jive",
-      image: assets.journeyJive
-    },
-    {
-      id: 4,
+      id: 5,
       title: "My Portfolio",
       description: "A personal portfolio website that showcases my work, skills, and experiences. The website is built using React, Tailwind CSS, and Vite, with EmailJS integrated for the contact form. It is designed to be fully responsive, optimized for all devices, and SEO-friendly. The website's design is inspired by the VS Code theme, giving it a sleek and modern developer-friendly aesthetic",
       technologies: ["React", "NodeJs", "MySQL", "Express", "Material UI"],

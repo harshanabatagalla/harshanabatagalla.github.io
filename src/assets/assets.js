@@ -2,6 +2,7 @@ import zelvira from './zelvira.png'
 import umbrellaGo from './umbrellaGO.png'
 import journeyJive from './journey-jive.png'
 import portfolio from './portfolio.png'
+import mushroom from './mushroom.png';
 
 import shehan from "./shehan.jfif";
 import prasad from "./prasad.jfif";
@@ -35,6 +36,7 @@ export const assets = {
     umbrellaGo,
     journeyJive,
     portfolio,
+    mushroom,
     shehan,
     prasad,
     pasinduG,
